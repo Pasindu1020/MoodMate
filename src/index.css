@@ -1,0 +1,153 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Custom Neon Colors */
+:root {
+  --color-neon-teal: #4ECDC4;
+  --color-neon-coral: #FF6B6B;
+  --color-neon-purple: #9D50BB;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #121212;
+
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+
+.perspective {
+  perspective: 1200px;
+}
+.transform-style {
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+.book-bg-antique {
+  background: linear-gradient(135deg, #141b39 0%, #29fff7 100%);
+  box-shadow: 0 8px 32px #133142a8, 0 1px 2px #FFF4 inset;
+  border-radius: 18px 38px 38px 18px;
+  border-left: 4px solid #29fff7;
+  position: relative;
+}
+.book-bg-pages {
+  background: linear-gradient(90deg, #eaf8fc 0%, #f9fafd 100%);
+  box-shadow: 0 8px 24px #29fff7a8, 0 1px 2px #FFF inset;
+  border-radius: 20px 20px 20px 20px;
+  border: 1.5px solid #29fff7;
+  position: relative;
+}
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.text-neon-teal { color: #29fff7; }
+.text-neon-coral { color: #FF6B6B; }
+.text-neon-purple { color: #7c55c8; }
+.bg-dark-bg { background: #181d2b; }
+
+.switch-holder {
+  display: flex;
+  padding: 10px 20px;
+  border-radius: 10px;
+  box-shadow: -8px -8px 15px rgba(255, 255, 255, .7),
+        10px 10px 10px rgba(0, 0, 0, .2),
+        inset 8px 8px 15px rgba(255, 255, 255, .7),
+        inset 10px 10px 10px rgba(0, 0, 0, .2);
+  justify-content: space-between;
+  align-items: center;
+}
+
+.switch-holder {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 18px;
+  border-radius: 14px;
+  backdrop-filter: blur(14px);
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.12),
+    rgba(0, 0, 0, 0.25)
+  );
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,0.08),
+    0 10px 25px rgba(0,0,0,0.25);
+}
+
+.switch-label span {
+  font-size: 14px;
+  font-weight: 500;
+  color: inherit;
+  white-space: nowrap;
+}
+
+.switch-toggle {
+  position: relative;
+  width: 90px;
+  height: 36px;
+}
+
+.switch-toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.switch-toggle label {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  border-radius: 999px;
+  background: linear-gradient(
+    145deg,
+    rgba(255,255,255,0.15),
+    rgba(0,0,0,0.35)
+  );
+  box-shadow:
+    inset 0 4px 8px rgba(0,0,0,0.35),
+    inset 0 -2px 4px rgba(255,255,255,0.15);
+  transition: background 0.3s ease;
+}
+
+.switch-toggle label::before {
+  content: "OFF";
+  position: absolute;
+  height: 28px;
+  width: 42px;
+  left: 4px;
+  top: 4px;
+  border-radius: 999px;
+  background: #cbd5e1;
+  color: #020617;
+  font-size: 11px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow:
+    0 4px 10px rgba(0,0,0,0.35);
+  transition: all 0.3s ease;
+}
+
+.switch-toggle input:checked + label::before {
+  transform: translateX(40px);
+  content: "ON";
+  background: linear-gradient(145deg, #22c55e, #16a34a);
+  color: #ffffff;
+  box-shadow:
+    0 0 14px rgba(34,197,94,0.8);
+}
