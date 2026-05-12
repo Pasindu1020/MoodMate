@@ -28,8 +28,8 @@ const genreMap = {
   // Add more as needed
 };
 
-const apiKey = '89b8584abafe02ac354744a9d4d8170f';
-const apiUrl = `https://api.themoviedb.org/3/trending/movie/week?api_key=${apiKey}`;
+const apiKey = '';
+const apiUrl = ``;
 
 const supportTypes = [
   { id: "anxiety", label: "Anxiety Support" },
